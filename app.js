@@ -2,8 +2,12 @@ require("dotenv").config();
 const sequelize = require("./src/modules/sequelize");
 const express = require("express");
 
+const usuariosRouter = require("./src/routes/usuarios.routes");
+
 const app = express();
 const port = 3000;
+
+app.use("/usuarios", usuariosRouter);
 
 app.get("/", (req, res) => {
   return res.status(200).send(`API [on]`);
