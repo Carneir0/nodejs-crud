@@ -6,6 +6,9 @@ const { default: helmet } = require("helmet");
 
 const sequelize = require("./src/modules/sequelize");
 const usuariosRouter = require("./src/routes/usuarios.routes");
+const swaggerUi = require("swagger-ui-express");
+
+const swaggerDocument = require("./swagger");
 
 const app = express();
 const port = process.env.PORT;
@@ -15,6 +18,7 @@ app.use(express.json());
 app.use(helmet());
 
 app.use("/usuarios", usuariosRouter);
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.get("/", (req, res) => {
   return res.status(200).send(`API [on]`);
