@@ -19,9 +19,12 @@
   },
   "homepage": "https://github.com/Carneir0/nodejs-crud#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "helmet": "^6.0.1",
     "mysql2": "^3.0.1",
+    "node-datetime": "^2.1.2",
     "nodemon": "^2.0.20",
     "sequelize": "^6.28.0"
   }
